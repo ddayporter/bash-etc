@@ -1,0 +1,14 @@
+```sudo atom /etc/motd```
+
+#########################################################################
+#                  Rachel's CLI aliases                                 #
+#                                                                       #
+#         gs="git status"    ga="git add"    gal="git add ."            #
+#           gl="git log --all --oneline --graph --decorate"             #
+#        gcm="git commit -m"    gpom="git push origin master"           #
+#  gpo="git push origin"     gc="git checkout"   gcb="git checkout -b"  #
+#         mongod="mongod --config /usr/local/etc/mongod.conf"           #
+#  glog=[git log decoration from Dimitri]  rspec="rspec --color -f d"   #
+#   jspec="jasmine-node spec"    jspecv="jasmine-node spec --verbose"   #
+#                                                                       #
+#########################################################################

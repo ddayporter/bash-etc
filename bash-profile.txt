@@ -1,0 +1,38 @@
+EDITOR=atom
+export PATH="/usr/local/bin:$PATH"
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
+    if  [ -f $(brew --prefix)/etc/bash_completion ]; then
+      source $(brew --prefix)/etc/bash_completion
+    fi
+
+    if  [ -f $(brew --prefix)/etc/bash_completion.d/git-prompt.sh ]; then
+      source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
+      GIT_PS1_SHOWDIRTYSTATE=1 # display the unstaged (*) and staged (+) indicators
+      # set your prompt. path: \w, git branch & status: $(__git_ps1), newline: \n, dollar sign delimiter: \$
+      PS1='\w$(__git_ps1) \n🐢  '
+    fi
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export GITHUB_USERNAME='ddayporter'
+
+# destroy all heroku apps
+function happ(){
+  for app in $(heroku apps)
+    do heroku apps:destroy --app $app --confirm $app
+  done
+}
+
+# aliases
+alias gs="git status"
+alias ga="git add"
+alias gal="git add ."
+alias gl="git log --all --oneline --graph --decorate"
+alias gcm="git commit -m"
+alias gpom="git push origin master"
+alias gpo="git push origin"
+alias gc="git checkout"
+alias gcb="git checkout -b"
+alias mongod="mongod --config /usr/local/etc/mongod.conf"
+alias glog='git log --all --decorate --graph --pretty=format:"%C(yellow)%h%Creset %C(auto)%d%Creset %Cblue%ar%Creset %Cred%an%Creset %n%w(72,1,2)%s"'
+alias rspec="rspec --color -f d"
+alias jspec="jasmine-node spec"
+alias jspecv="jasmine-node spec --verbose"
